@@ -7,12 +7,10 @@
 
 <script>
 export default {
-  asyncData({ $axios, route }) {
-    //   console.log(route.params.id)
+  asyncData({ $axios, route, $config: { baseURL } }) {
     return $axios
-      .get(`http://jsonplaceholder.typicode.com/posts/${route.params.id}`)
+      .get(`${baseURL}/posts/${route.params.id}`)
       .then((response) => {
-        // console.log("server side");
         return { post: response.data };
       });
   },

@@ -9,11 +9,11 @@
 
 <script>
 export default {
-  asyncData({ $axios }) {
+  
+  asyncData({ $axios, $config: { baseURL } }) {
     return $axios
-      .get("http://jsonplaceholder.typicode.com/posts")
+      .get(`${baseURL}/posts`)
       .then((response) => {
-        // console.log("server side");
         return { posts: response.data };
       });
   },

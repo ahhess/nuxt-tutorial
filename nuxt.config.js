@@ -1,4 +1,13 @@
 export default {
+
+  env: {
+    baseURL: process.env.BASE_URL
+  },
+
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'https://my-json-server.typicode.com/ahhess/nuxt-tutorial'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-introduction',
@@ -37,7 +46,8 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
